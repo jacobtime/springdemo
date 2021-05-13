@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="te" class="com.demo.dao.UserDaoImpl"/>
+    <bean id="rew" class="com.demo.service.UserService">
+        <property name="userDao" ref="te"/>
+    </bean>
+    <bean id="dept" class="com.demo.bean.Dept">
+        <property name="name" value="人力资源部"/>
+    </bean>
+    <bean id="emp" class="com.demo.bean.Emp">
+        <property name="name" value="李阔"/>
+        <property name="id" value="8002118063"/>
+        <property name="dept" ref="dept"/>
+<!--        <property name="dept.name" value="吃屎部"/>-->
+    </bean>
+</beans>
